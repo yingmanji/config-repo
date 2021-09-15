@@ -1,0 +1,17 @@
+server:
+  port: 6052
+spring:
+  application:
+    name: producer-service
+  security:
+    user:
+      name: admin
+      password: admin
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+#     defaultZone: http://eureka.service01.com:7071/eureka/,http://eureka.service02.com:7072/eureka/
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@eureka.service01.com:7071/eureka/,http://${spring.security.user.name}:${spring.security.user.password}@eureka.service02.com:7072/eureka/

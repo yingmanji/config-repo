@@ -20,3 +20,4 @@ eureka:
     service-url:
 #     defaultZone: http://eureka.service01.com:7071/eureka/,http://eureka.service02.com:7072/eureka/
       defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@eureka.service01.com:7071/eureka/,http://${spring.security.user.name}:${spring.security.user.password}@eureka.service02.com:7072/eureka/
+version: producer-service
